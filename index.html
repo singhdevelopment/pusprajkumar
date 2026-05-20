@@ -401,6 +401,87 @@ footer {
     }
 }
 </style>
+	<script>
+// Disable Right Click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert('Right click is disabled on this website.');
+});
+
+// Disable Keyboard Shortcuts
+document.addEventListener('keydown', function(e) {
+
+    // F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+        alert('Developer tools are disabled.');
+        return false;
+    }
+
+    // Ctrl + Shift + I
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
+        e.preventDefault();
+        alert('Inspect Element is disabled.');
+        return false;
+    }
+
+    // Ctrl + Shift + J
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+        e.preventDefault();
+        alert('Console access is disabled.');
+        return false;
+    }
+
+    // Ctrl + Shift + C
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c') {
+        e.preventDefault();
+        alert('Inspect Element is disabled.');
+        return false;
+    }
+
+    // Ctrl + U
+    if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+        e.preventDefault();
+        alert('View Source is disabled.');
+        return false;
+    }
+
+    // Ctrl + S
+    if (e.ctrlKey && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        alert('Saving this page is disabled.');
+        return false;
+    }
+
+    // Print Screen
+    if (e.key === 'PrintScreen') {
+        e.preventDefault();
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText('');
+        }
+
+        alert('Screenshots are disabled on this website.');
+        return false;
+    }
+});
+
+// Disable Text Selection
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+// Disable Dragging
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+});
+
+// Disable Copy
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    alert('Copying content is disabled.');
+});
+</script>
 </head>
 <body>
 
